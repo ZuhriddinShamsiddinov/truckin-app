@@ -7,9 +7,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import static org.example.truckapp.OpenSourceUtil.convertZonedDateTime;
 import org.example.truckapp.entity.Truck;
 import org.example.truckapp.entity.TruckInfo;
-import org.example.truckapp.service.TruckService;
 
 @Data
 @AllArgsConstructor
@@ -37,7 +37,7 @@ public class TruckDto {
         this.currentPosition = info.getCurrentCity();
         this.lastTotalDistance = info.getTotalDistance().divide(BigDecimal.valueOf(1000), RoundingMode.HALF_UP);
         this.totalDistance = truck.getTotalDistance().divide(BigDecimal.valueOf(1000), RoundingMode.HALF_UP);
-        this.lastSentTime = TruckService.convertZonedDateTime(info.getSentTime(), info.getZoneId());
+        this.lastSentTime = convertZonedDateTime(info.getSentTime(), info.getZoneId());
         this.lastAverageSpeed = Math.round(info.getAverageSpeed() * 3.6);
     }
 
@@ -47,7 +47,7 @@ public class TruckDto {
         this.currentPosition = info.getCurrentCity();
         this.lastTotalDistance = info.getTotalDistance().divide(BigDecimal.valueOf(1000), RoundingMode.HALF_UP);
         this.totalDistance = truck.getTotalDistance().divide(BigDecimal.valueOf(1000), RoundingMode.HALF_UP);
-        this.lastSentTime = TruckService.convertZonedDateTime(info.getSentTime(), zoneId);
+        this.lastSentTime = convertZonedDateTime(info.getSentTime(), zoneId);
         this.lastAverageSpeed = Math.round(info.getAverageSpeed() * 3.6);
     }
 

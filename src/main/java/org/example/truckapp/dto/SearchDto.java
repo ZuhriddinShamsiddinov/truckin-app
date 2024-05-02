@@ -12,9 +12,14 @@ import org.example.truckapp.service.CustomDateDeserializer;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SearchDto {
+
     @JsonDeserialize(using = CustomDateDeserializer.class)
     private LocalDateTime fromDate;
+
     @JsonDeserialize(using = CustomDateDeserializer.class)
     private LocalDateTime toDate;
-    private String zoneId;
+
+    private Double latitude;
+
+    private Double longitude;
 }
