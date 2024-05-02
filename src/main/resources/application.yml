@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: truck-app
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: root
+    url: jdbc:postgresql://localhost:5432/truck_app
+  jpa:
+    hibernate:
+      ddl-auto: create
+server:
+  port: 8090
+api:
+  info:
+    title: Truck App
+    description: Trucking App
+    username: ZuhriddinShamsiddinov
+    email: sh.zuhriddin.2005@gmail.com
