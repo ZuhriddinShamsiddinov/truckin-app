@@ -20,6 +20,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class TruckController {
     private final TruckService truckService;
 
+    /**
+     * This method for logging about truck state for each minute
+     * @param id - truck
+     * @param dto - all infos
+     * @return
+     */
     @PostMapping("/api/v1/truck/info/{id}")
     public ResponseEntity<Long> createInfo(@PathVariable Long id,
                                            @RequestBody TruckInfoDto dto) {
