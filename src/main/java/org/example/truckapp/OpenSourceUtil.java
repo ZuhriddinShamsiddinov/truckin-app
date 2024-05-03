@@ -63,7 +63,7 @@ public class OpenSourceUtil {
             JsonNode jsonNode = objectMapper.readTree(jsonResponse);
 
             JsonNode addressNode = jsonNode.get("address");
-            if (addressNode != null && addressNode.has("town")) {
+            if (addressNode != null) {
                 String road = addressNode.has("road") ? addressNode.get("road").asText() : "";
                 String town = addressNode.has("town") ? addressNode.get("town").asText() : "";
                 String country = addressNode.has("country") ? addressNode.get("country").asText() : "";
